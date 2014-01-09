@@ -1,0 +1,7 @@
+<h1 class="text-center">
+    {{ title }}
+</h1>
+<div class="row" ng-repeat="post in data.posts">
+    <h2><a ng-click="viewJugador(post._id.$oid)">{{ post.apodo }}</a></h2>
+    <p>{{ post.posicion }}</p>
+</div>
