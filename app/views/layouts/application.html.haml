@@ -1,0 +1,23 @@
+!!!
+%html{'ng-app'=>"desafiomundial"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
+    %title= content_for?(:title) ? yield(:title) : "Desafío Mundial"
+    %meta{:content => "", :name => "description"}
+    %meta{:content => "", :name => "author"}
+    = stylesheet_link_tag    "application", :media => "all"
+    =# javascript_include_tag "//www.google.com/jsapi"
+    = javascript_include_tag "application", controller_name
+    = csrf_meta_tags
+    = yield(:head)
+    = analytics_code
+
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{:role => 'navigation'}
+      .container
+        .navbar-header
+          = link_to 'Desafio: Mundial', root_path
+        .navbar-collapse.collapse
+        -# opciones barra
+    = yield

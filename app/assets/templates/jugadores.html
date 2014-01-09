@@ -1,0 +1,7 @@
+<h1 class="text-center">
+    {{ title }}
+</h1>
+<div class="row" ng-repeat="jugador in data.lista">
+    <h2><a ng-click="viewJugador(jugador._id.$oid)">{{ jugador.apodo }}</a></h2>
+    <p>{{ jugador.posicion }}</p>
+</div>
