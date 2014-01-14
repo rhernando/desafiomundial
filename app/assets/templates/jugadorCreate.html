@@ -1,0 +1,23 @@
+<h1 class="text-center">Nuevo Jugador</h1>
+<form>
+    <fieldset>
+        <label><strong>Apodo</strong></label>
+        <input class="span12" ng-model="formJugador.apodo" placeholder="apodo" type="text" maxlength="250">
+    </fieldset>
+    <fieldset>
+        <label><strong>Nombre</strong></label>
+        <input class="span12" ng-model="formJugador.nombre" placeholder="Nombre" type="text" maxlength="250">
+        <label><strong>Apellidos</strong></label>
+        <input class="span12" ng-model="formJugador.apellidos" placeholder="Apellidos" type="text"
+               maxlength="250">
+    </fieldset>
+    <fieldset>
+        <label><strong>Dorsal</strong></label>
+        <input class="span12" ng-model="formJugador.dorsal" placeholder="Dorsal" type="text" maxlength="20">
+    </fieldset>
+
+    <fieldset>
+        <button class="btn btn-primary" ng-click="createPost()">Create</button>
+    </fieldset>
+</form>
+</div>

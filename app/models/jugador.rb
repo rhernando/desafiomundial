@@ -10,4 +10,6 @@ class Jugador
   field :nacion, type: String
   field :nacion_logo, type: String
   field :edad, type: Integer
+
+  validates :apodo, presence: true
 end

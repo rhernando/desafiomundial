@@ -19,8 +19,8 @@ angular.module('desafiomundial').factory('jugadorData', ['$http', ($http) ->
 
   jugadorData.loadJugador = (idjugador) ->
     if jugadorData.jugadorLoaded != idjugador
-      console.log('./jugadores/'+idjugador+'.json')
-      $http.get('./jugadores/'+idjugador+'.json').success((data) ->
+      console.log('./jugadores/' + idjugador + '.json')
+      $http.get('./jugadores/' + idjugador + '.json').success((data) ->
         jugadorData.data.jugador = data
         jugadorData.jugadorLoaded = idjugador
         console.log('Successfully loaded show.')
@@ -28,6 +28,19 @@ angular.module('desafiomundial').factory('jugadorData', ['$http', ($http) ->
         console.error('Failed to load .')
       )
 
+  jugadorData.createJugador = (newJugador) ->
+    data =
+      new_jugador:
+        apodo: newJugador.apodo
+        nombre: newJugador.nombre
+        apellidos: newJugador.apellidos
+        dorsal: newJugador.dorsal
+    $http.post('./jugadores.json', data).success((data) ->
+      jugadorData.data.lista.push(data)
+    ).error(->
+      console.error('Failed to create new jugador.')
+    )
+    return true
 
   return jugadorData
 
