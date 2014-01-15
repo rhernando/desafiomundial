@@ -1,7 +1,7 @@
 @JugadorIndexCtrl = ($scope, $location, $http, jugadorData) ->
   $scope.data = jugadorData.data
 
-  jugadorData.loadJugadores()
+  jugadorData.loadJugadores(null)
 
   $scope.viewJugador = (jugadorId) ->
     $location.url('/jugador/' + jugadorId)

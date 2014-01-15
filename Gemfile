@@ -50,3 +50,4 @@ end
 gem 'haml-rails'
 gem 'angularjs-rails'
 gem 'devise'
+gem 'underscore-rails'

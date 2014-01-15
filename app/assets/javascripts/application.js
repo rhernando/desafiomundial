@@ -17,4 +17,5 @@
 //= require angular-route
 //= require angular-animate
 //= require angular-resource
+//= require underscore
 //= require home

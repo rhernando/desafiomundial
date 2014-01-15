@@ -7,14 +7,18 @@ angular.module('desafiomundial').factory('jugadorData', ['$http', ($http) ->
   console.log("Initialized jugadorData.")
 
 
-  jugadorData.loadJugadores = ->
+  jugadorData.loadJugadores = (deferred) ->
     if !jugadorData.isLoaded
       $http.get('./jugadores.json').success((data) ->
         jugadorData.data.lista = data
         jugadorData.isLoaded = true
         console.log('Successfully loaded .')
+        if deferred
+          deferred.resolve()
       ).error(->
         console.error('Failed to load .')
+        if deferred
+          deferred.reject('Failed to load posts.')
       )
 
   jugadorData.loadJugador = (idjugador) ->

@@ -1,7 +1,7 @@
 @CreateJugadorCtrl = ($scope, $location, jugadorData) ->
 
   $scope.data = jugadorData.data
-  jugadorData.loadJugadores()
+  jugadorData.loadJugadores(null)
 
   $scope.formJugador =
     apodo: ''
