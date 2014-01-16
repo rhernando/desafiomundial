@@ -24,6 +24,8 @@ module Desafiomundial
     config.i18n.default_locale = :es
 
     config.assets.paths << Rails.root.join('app', 'assets', 'templates')
+    # include Bower components in compiled assets
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
 
     config.to_prepare do
       DeviseController.respond_to :html, :json
