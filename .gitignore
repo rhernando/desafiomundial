@@ -27,3 +27,10 @@ app/.DS_store
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
+
+*.sw*
+*~
+build/
+bin/
+node_modules/
+vendor/
